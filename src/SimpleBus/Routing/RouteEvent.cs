@@ -8,9 +8,4 @@ namespace SimpleBus.Routing
         public List<string> Subjects { get; set; }
         public RouteEventAction Action { get; set; }
     }
-
-    public enum RouteEventAction
-    {
-        Started, Stopped, NotPing
-    }
 }

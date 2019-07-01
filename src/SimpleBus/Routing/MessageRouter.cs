@@ -1,19 +1,20 @@
 ﻿using SimpleBus.EndPoint;
+using SimpleBus.Settings;
 
 namespace SimpleBus.Routing
 {
     class MessageRouter : IMessageRouter
     {
-        private readonly IPublishSubscribeService<RouteEvent> pubSubService;
+        private readonly IPublishSubscribeService pubSubService;
         private readonly IRouteTable routeTable;
         private const string EndPointStartedEventName = "endpoint.started.event";
         private const string EndPointStoppedEventName = "endpoint.stoped.event";
         public MessageRouter(IPublishSubscribeServiceBuilder pubSubServiceFactory, IRouteTable routeTable)
         {
-            this.pubSubService = pubSubServiceFactory.Build<RouteEvent>();
+            this.pubSubService = pubSubServiceFactory.Build();
             this.routeTable = routeTable;
-            pubSubService.Subscribe(EndPointStartedEventName, EndPointStarted);
-            pubSubService.Subscribe(EndPointStoppedEventName, EndPointStopped);
+            pubSubService.Subscribe<RouteEvent>(EndPointStartedEventName, EndPointStarted);
+            pubSubService.Subscribe<RouteEvent>(EndPointStoppedEventName, EndPointStopped);
         }
 
         private void EndPointStarted(RouteEvent obj)
