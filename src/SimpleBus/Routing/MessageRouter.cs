@@ -1,5 +1,6 @@
 ﻿using SimpleBus.EndPoint;
 using SimpleBus.Settings;
+using SimpleBus.Settings.PubSub;
 
 namespace SimpleBus.Routing
 {

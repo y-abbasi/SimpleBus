@@ -1,5 +1,6 @@
 ﻿using System;
 using SimpleBus.Settings;
+using SimpleBus.Settings.PubSub;
 
 namespace SimpleBus.EndPoint
 {

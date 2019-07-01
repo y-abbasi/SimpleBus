@@ -1,4 +1,4 @@
-﻿namespace SimpleBus.Settings
+﻿namespace SimpleBus.Settings.PubSub
 {
     public interface IPublishSubscribeServiceProvider
     {

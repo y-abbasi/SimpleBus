@@ -46,11 +46,11 @@
   <ItemGroup>
     <Compile Include="EndPoint\IBus.cs" />
     <Compile Include="EndPoint\IBusBuilder.cs" />
-    <Compile Include="Settings\IPublishSubscribeService.cs" />
-    <Compile Include="Settings\PublishSubscribeServiceBuilder.cs" />
-    <Compile Include="Settings\IPublishSubscribeServiceProvider.cs" />
+    <Compile Include="Settings\PubSub\IPublishSubscribeService.cs" />
+    <Compile Include="Settings\PubSub\PublishSubscribeServiceBuilder.cs" />
+    <Compile Include="Settings\PubSub\IPublishSubscribeServiceProvider.cs" />
     <Compile Include="EndPoint\RabbitMqPublishSubscribeService.cs" />
-    <Compile Include="Settings\RabbitMqPublishSubscribeServiceProvider.cs" />
+    <Compile Include="Settings\PubSub\RabbitMqPublishSubscribeServiceProvider.cs" />
     <Compile Include="Messaging\ICommandHandler.cs" />
     <Compile Include="EndPoint\IEndPoint.cs" />
     <Compile Include="EndPoint\OneWay\IOneWayEndPointConfigurator.cs" />

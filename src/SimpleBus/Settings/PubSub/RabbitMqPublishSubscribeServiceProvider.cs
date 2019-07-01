@@ -1,6 +1,6 @@
 ﻿using SimpleBus.EndPoint;
 
-namespace SimpleBus.Settings
+namespace SimpleBus.Settings.PubSub
 {
     internal class RabbitMqPublishSubscribeServiceProvider : IPublishSubscribeServiceProvider
     {

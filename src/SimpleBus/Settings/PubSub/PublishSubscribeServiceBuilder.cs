@@ -4,7 +4,7 @@ using System;
 
 #endregion
 
-namespace SimpleBus.Settings
+namespace SimpleBus.Settings.PubSub
 {
     public class PublishSubscribeServiceBuilder
     {

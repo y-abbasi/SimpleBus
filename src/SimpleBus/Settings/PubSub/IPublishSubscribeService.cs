@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SimpleBus.Settings
+namespace SimpleBus.Settings.PubSub
 {
     public interface IPublishSubscribeService
     {
