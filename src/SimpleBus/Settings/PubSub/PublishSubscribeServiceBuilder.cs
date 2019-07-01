@@ -1,15 +1,18 @@
 ﻿#region
 
 using System;
+using System.Configuration;
+using SimpleBus.Config;
 
 #endregion
 
 namespace SimpleBus.Settings.PubSub
 {
-    public class PublishSubscribeServiceBuilder
+    public sealed class PublishSubscribeServiceBuilder
     {
         private Action<object> configurator;
         private Func<IPublishSubscribeServiceProvider> providerCreator;
+        private Func<IPublishSubscribeService> builder;
 
         private PublishSubscribeServiceBuilder()
         {
@@ -23,10 +26,11 @@ namespace SimpleBus.Settings.PubSub
 
         static PublishSubscribeServiceBuilder()
         {
+            var config = ConfigurationFactory.Create();
             Instance = new PublishSubscribeServiceBuilder();
             Instance.WithProvider<RabbitMqPublishSubscribeServiceProvider>(
-                provider => provider.WithServer("server")
-                                    .LogOnWith("user", "pass"));
+                provider => provider.WithServer(config.RabbitMq.Server)
+                                    .LogOnWith(config.RabbitMq.UserName, config.RabbitMq.Password));
         }
 
         public static PublishSubscribeServiceBuilder Instance { get; }
@@ -34,12 +38,11 @@ namespace SimpleBus.Settings.PubSub
         public PublishSubscribeServiceBuilder WithProvider<T>(Action<T> configurator)
             where T : class, IPublishSubscribeServiceProvider, new()
         {
-            this.configurator = o => configurator((T) o);
+            this.configurator = o => configurator((T)o);
             this.providerCreator = () => new T();
             return this;
         }
 
-        private Func<IPublishSubscribeService> builder;
 
         public IPublishSubscribeService Build()
         {

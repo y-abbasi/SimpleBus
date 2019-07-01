@@ -35,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,10 +47,13 @@
   <ItemGroup>
     <Compile Include="EndPoint\IBus.cs" />
     <Compile Include="EndPoint\IBusBuilder.cs" />
+    <Compile Include="Config\ConfigurationFactory.cs" />
+    <Compile Include="Config\IConfiguration.cs" />
     <Compile Include="Settings\PubSub\IPublishSubscribeService.cs" />
     <Compile Include="Settings\PubSub\PublishSubscribeServiceBuilder.cs" />
     <Compile Include="Settings\PubSub\IPublishSubscribeServiceProvider.cs" />
     <Compile Include="EndPoint\RabbitMqPublishSubscribeService.cs" />
+    <Compile Include="Config\RabbitMqConfig.cs" />
     <Compile Include="Settings\PubSub\RabbitMqPublishSubscribeServiceProvider.cs" />
     <Compile Include="Messaging\ICommandHandler.cs" />
     <Compile Include="EndPoint\IEndPoint.cs" />
