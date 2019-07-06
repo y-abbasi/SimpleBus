@@ -32,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -45,12 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Settings\IServiceProvider.cs" />
+    <Compile Include="Config\Module.cs" />
+    <Compile Include="Settings\IServiceProviderDecorator.cs" />
+    <Compile Include="Settings\LifeStyle.cs" />
+    <Compile Include="Settings\LifeStyleDecoratorFactory.cs" />
+    <Compile Include="Settings\ServiceProviderConfigurator.cs" />
     <Compile Include="EndPoint\IBus.cs" />
     <Compile Include="EndPoint\IBusBuilder.cs" />
     <Compile Include="Config\ConfigurationFactory.cs" />
     <Compile Include="Config\IConfiguration.cs" />
+    <Compile Include="Settings\IDefaultProviderConfigurator.cs" />
     <Compile Include="Settings\PubSub\IPublishSubscribeService.cs" />
-    <Compile Include="Settings\PubSub\PublishSubscribeServiceBuilder.cs" />
+    <Compile Include="Settings\PubSub\PublishSubscribeServiceDefaultProvider.cs" />
     <Compile Include="Settings\PubSub\IPublishSubscribeServiceProvider.cs" />
     <Compile Include="EndPoint\RabbitMqPublishSubscribeService.cs" />
     <Compile Include="Config\RabbitMqConfig.cs" />

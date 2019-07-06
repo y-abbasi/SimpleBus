@@ -1,8 +1,9 @@
-﻿using SimpleBus.EndPoint;
+﻿using SimpleBus.Config;
+using SimpleBus.EndPoint;
 
 namespace SimpleBus.Settings.PubSub
 {
-    internal class RabbitMqPublishSubscribeServiceProvider : IPublishSubscribeServiceProvider
+    internal class RabbitMqPublishSubscribeServiceProvider : IPublishSubscribeServiceProvider, IServiceProvider<IPublishSubscribeService>
     {
         private string server;
         private string userName;
